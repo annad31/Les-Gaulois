@@ -6,13 +6,13 @@ import personnages.Romain;
 
 public class TestGaulois {
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Astérix", 8);
-		Gaulois obelix = new Gaulois("Obélix", 16);
-		asterix.parler("Bonjour Obélix.");
-		obelix.parler("Bonjour Astérix. Ca te dirait d'aller chasser des sangliers ?");
-		asterix.parler("Oui très bonne idée.");
+		Gaulois asterix = new Gaulois("AstÃ©rix", 8);
+		Gaulois obelix = new Gaulois("ObÃ©lix", 16);
+		asterix.parler("Bonjour ObÃ©lix.");
+		obelix.parler("Bonjour AstÃ©rix. Ca te dirait d'aller chasser des sangliers ?");
+		asterix.parler("Oui trÃ©s bonne idï¿½e.");
 		Romain minus = new Romain("Minus", 6);
-		System.out.println("Dans la forêt "+ asterix.getNom() + " et " + obelix.getNom() + " tombent nez à nez sur le romain " + minus.getNom() + ".");
+		System.out.println("Dans la forÃªt "+ asterix.getNom() + " et " + obelix.getNom() + " tombent nez Ã  nez sur le romain " + minus.getNom() + ".");
 		for (int i=0;i<3;i++) {
 			asterix.frapper(minus);
 			
