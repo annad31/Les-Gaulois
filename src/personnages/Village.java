@@ -1,7 +1,5 @@
 package personnages;
 
-import javax.swing.text.ElementIterator;
-
 public class Village {
 	private String nom;
 	private int nbVillageois=0;
