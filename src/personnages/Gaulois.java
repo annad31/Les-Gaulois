@@ -1,10 +1,15 @@
 package personnages;
 
+import objets.Equipement;
+
 public class Gaulois {
 	private String nom;
-	private int force;
+	// private int force;
 	private int effetPotion=1;
 	private Village village;
+	private int force; //TP3
+	private int nbTrophees; //TP3
+	private Equipement[] trophees= new Equipement[100]; //TP3
 	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -27,9 +32,9 @@ public class Gaulois {
 		System.out.println(prendreParole() + "\"" + texte + "\"");
 	}
 
-	private String prendreParole() {
-		return "Le gaulois " + nom + " : ";
-	}
+//	private String prendreParole() {
+//		return "Le gaulois " + nom + " : ";
+//	}
 	
 	
 	public static void main(String[] args) {
@@ -42,17 +47,17 @@ public class Gaulois {
 		return nom;
 	}
 	
-	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la m�choire de " + romain.getNom());
-		int coup = force*effetPotion;
-		romain.recevoirCoup(coup/3);
-		if (effetPotion>1) {
-			effetPotion=effetPotion-1;
-		}
-		else {
-			effetPotion=1;
-		}
-	}
+//	public void frapper(Romain romain) {
+//		System.out.println(nom + " envoie un grand coup dans la m�choire de " + romain.getNom());
+//		int coup = force*effetPotion;
+//		romain.recevoirCoup(coup/3);
+//		if (effetPotion>1) {
+//			effetPotion=effetPotion-1;
+//		}
+//		else {
+//			effetPotion=1;
+//		}
+//	}
 	
 	public void boirePotion(int forcePotion) {
 		effetPotion=forcePotion;
@@ -69,5 +74,21 @@ public class Gaulois {
 			parler("Bonjour je m'appelle " + nom + ". J'habite le village " + village.getNom() + ".");
 		}
 	}
+	
+	// TP3
+	
+	private String prendreParole() {
+		return "Le gaulois " + nom + " : ";
+	}
+	
+	public void frapper(Romain romain) {
+		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+		Equipement[] coups = romain.recevoirCoup((force / 3) * effetPotion);
+		for (int i = 0; coups != null && i < coups.length; i++,nbTrophees++) {
+			this.trophees[nbTrophees] = coups[i];
+		}
+	}
+
+
 
 }
